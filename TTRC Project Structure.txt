@@ -1,0 +1,17 @@
+TTRC Project Structure:
+
+TTRC Core Project File Structure:
+
+controller
+entity
+dto
+dao
+mapper
+exception
+repository
+service
+serviceImpl
+
+This is the initial project structure some of these
+will be moved to the configuration service 
+
