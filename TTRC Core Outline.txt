@@ -1,0 +1,51 @@
+TTRC Core Outline
+
+
+Spring Cloud Microservices Application
+
+Front End React 
+Docker Container
+
+
+1. Rest APIs
+
+	JPA 
+	Hibernate
+	
+2. DTO Data Transfer Object Pattern
+
+3. Exception Handling
+
+4. Rest API validation
+
+5. Actuator
+
+6. API Documentation
+
+7. Microservices 
+	Best Practices
+	Spring Cloud Modules
+	Spring Cloud Architecture
+	
+8. Spring Version Compatilibility
+
+9. End Point Communication
+	RestTemplate
+	WebClient
+	OpenFeign
+	
+10. Service Registry and Discover Eureka Server
+
+11. Spring API Gateway
+
+12. Spring Centralized Configuration Server 
+
+13. Spring Cloud Bus
+
+14. Distributed Tracing 
+	Spring Cloud Sleuth and Zipkin
+
+15. Circuit breaker Pattern
+16. 
+
+13. 
