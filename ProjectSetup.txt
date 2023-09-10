@@ -1,0 +1,36 @@
+TTRC Repo and Project Set up:
+
+How to create Services and bring into the Project:
+Steps Overview:
+1. Create new Repo on Git 
+2. Clone Repo in local environment 
+3. Generate Spring Boot Project 
+4. Copy Spring Files into the Repo
+5. Open Repo in IntelliJ Module
+6. Configure Repo 
+7. Build Repo
+
+
+Steps Detailed:
+1. Create new Repo on Git 
+	Git Hub Create new Repo 
+	Name Repo ended with Services
+	EX: Name-Services
+2. Clone Repo in local environment 
+	Go to project folder
+	Create new Repo by cloning existing repository
+3. Generate Spring Boot Project 
+	Go to Spring.Starter.io
+	Create Project with dependencies:
+		Maven, jar, Java, JDK 17
+		com.dgl, name-service, com.dgl.nameservice
+	Dependencies
+		Web, Dev Tools, MySql, JPA, lombok
+4. Copy Spring Files into the Repo
+	Add Spring boot files to the repo 
+5. Open Repo in IntelliJ Module
+	Open IntelliJ import repo into existing TTRC project 
+6. Configure Repo 
+	Update the Properties file with the connection information
+7. Build Repo 
+	Run Maven Build Project
