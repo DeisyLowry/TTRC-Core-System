@@ -1,0 +1,104 @@
+TTRC Core System Overview:
+
+The Vision
+
+This will be the core of the system designed 
+
+Approach Microservices System 
+
+1. Spring Cloud 
+2. CI/CD Pipelines
+3. Configuration Server
+
+
+
+Client (Angular Front End)
+
+Spring Boot Cloud Application Microservices
+Components:
+
+1. Rest Endpoints
+2. DTO (Data Transfer Object)
+3. Mapping Libraries (MapStruct, Model Mapper)
+4. Exception Handling
+5. Rest API Validation
+6. Actuator
+7. Rest API Documentation
+8. Endpoint Communication (RestTemplate, Webclient, OpenFeign)
+9. Service Registry and Discovery (Eureka)
+10. API Gateway
+11. Cloud Configuration (Centralized Configuration)
+12. Cloud Bus Auto Refresh
+13. Distributed Tracing Ziplin
+14. Circuit Breaker Pattern
+
+15. Logging 
+
+
+TTRC Steps 
+
+1. Create Rest Endpoints
+2. Implement DTO Pattern Create Data Transfer Objects 
+3. Create Mapping Libraries (Model Mapper/Mapstruct)
+4. Implement Exception Handling 
+5. Implement Endpoint Validation
+6. Implement Endpoint Communication (RestTemplate, Webclient, OpenFeign)
+7. Implement Actuator
+8. Create Endpoint Documentation
+9. Set up Eureka and Discovery
+10. Implement API Gateway
+11. Centralize Configuration 
+12. Implement Cloud Bus Auto Refresh
+13. Implement Distributed Tracing
+14. Implement Circuit Breaker Pattern
+15. Implement Logging 
+
+
+
+Define Endpoints to be created:
+Define Relationships between Endpoints 
+
+
+
+Micorservices Overview:
+
+Controller
+(Endpoints)
+Service Layer 
+Service Impl
+Model 
+
+DTO Pattern 
+Mapper Classes 
+
+Hibernate 
+JPA Repository 
+
+MySql Database 
+Table and Load Scripts
+
+
+MISC
+
+API Gateway
+
+Service Registry
+
+Configuration Server
+
+Configuration Repo (Initially Git Repo)
+
+Distributed Tracing 
+(Zipkin)
+
+Open Feign Client
+
+Logging 
+ 
+
+
+
+
+
+
+
