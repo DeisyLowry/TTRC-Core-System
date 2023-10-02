@@ -1,0 +1,77 @@
+Working Man's Trades:
+
+Overview:
+Designed to be in and out from designated Technical Indicators during 
+well defined timeframes, depending on the time of the year, and commodity
+being traded.
+
+Conditions:
+
+	Time of the Year:
+		SummerTime
+		Spring
+		Fall/Winter
+
+	Commodity being Traded:
+		Stock
+		Index
+		
+	Charts
+		Entry
+		Trade
+		Trend
+		
+	Expiration:
+	
+	
+	Set Up:
+	
+	Daily Chart at the Top of the Bolling Band
+	
+		Daily is the Strongest Chart we have you can use this as both Trade and Trend
+	
+	Trade Expectations
+	
+		Gains:
+			Expect a large move of the range (5% - 25%) 
+			In the options trade potentially 100%
+		
+		Duration:
+			4 days to 45 days
+
+		Entry 	
+			Expect the purchasing for Options
+			Range:
+				SummerTime:
+					2 Weeks to 4 Weeks
+				Fall/Winter:
+					3 Months out 
+				SpringTime:
+					1 to 3 Months out
+	The Play:
+	
+		Large Trade Setup:
+			70/20/10 Trade Entry 
+			Track on the Trade Chart:
+				@ the Money
+				20 MA
+				OOB Other End of the Bolling Band
+		
+	Criteria 
+		Entry Criteria
+			OOB (Top/Bottom) Bollinger Band
+			Make sure over 80 RSI 
+			Make sure you see a reversal candle 
+			Follow for the confirmation chart
+			2 candles should complete HRPF
+		
+		Exit Criteria:
+			Trend ends on the Trade Chart:
+
+	Charts
+		Trend Daily
+		Trade Daily
+		Entry 21 Minute
+	
+	
+	

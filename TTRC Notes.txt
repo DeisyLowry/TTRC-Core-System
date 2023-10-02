@@ -1,0 +1,78 @@
+
+Any links or ideas I stumble across will be placed here for future reference
+
+Tools:
+IntelliJ 
+Postman
+Visual Studio Code
+TestContainers
+	Create Data Stores for Testing
+	
+Links:
+
+Git 
+https://www.atlassian.com/git/tutorials/syncing
+
+Testing 
+
+
+Right now my system looks like this:
+
+Client 
+
+First Tier
+
+Interaction 
+	Stocks 
+	Trades
+	Users
+	Accounts
+	Trade Ideas
+	Charts
+	Anything related to trading 
+		Java 17 Springboot 3.0  Spring Cloud Junit Mockito
+		API Gateway Service Registry Distributed Tracing 
+		
+	MySql 
+	
+Resource Information 
+	Books
+	Reference Material 
+	Ideas
+	Daily Notes
+	Daily Movers
+	Anything non structured Data
+		MS .Net Core
+		MongoDB
+		
+Analytics 
+	Trends Analysis 
+	Trades Analysis	
+		Python
+		Spark
+		Solr
+		Hadoop
+		Flume
+		
+Technologies
+	Docker
+	Git
+	Jenkins
+	Angular
+	
+	
+	Spring Framework 
+	
+	
+	Object Mapping used for the DTO generation 
+		https://www.baeldung.com/java-performance-mapping-frameworks
+		Mapstruct or ModelMapper
+			Chosen for performance or ease of used
+		DTO packing information
+		https://stackoverflow.com/questions/70149550/client-modules-dtos-as-a-multi-module-or-separate-project-repo
+		
+			
+	
+
+	
+	

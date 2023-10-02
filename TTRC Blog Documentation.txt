@@ -1,0 +1,21 @@
+TTRC Feedback Center
+
+Feedback Center
+
+Initial Idea is to create a blog environment where users can 
+submit a topic for discussion and have feedback
+
+The general categories will be:
+
+Trading Journal 
+
+New Ideas for the Site 
+
+Enhancements to existing functionality
+
+Initially this will be written in Node.js and Mondgodb 
+
+Probably will be collapsed into the .Net Core area not certain as of now
+
+
+
