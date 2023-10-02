@@ -1,0 +1,310 @@
+TTRC Core Systems
+
+The CORE Functionality will revolve around Spring Boot Microservices:
+
+An outline:
+
+Spring Boot is popular Java framework for writing Microservices, providing various extension projects under Spring Cloud to build out full stack functionality. 
+The framework allows for building highly integrated systems from a simple architecture through multiple collaborating components, it is designed to 
+easily scale from small as well as large system. 
+Spring boot can easily integrate with other frameworks through implementing Inversion of Control.
+
+Spring Boot Components:
+
+Data Management — 
+Provides modules for seemless integration with various data sources: 
+Spring JDBC, Spring JPA, Spring MongoDB, Spring Apache Cassandra are a few of the most popular
+
+Error and Failure Strategies:
+Spring boot can integrate with Resilience4J. 
+The Framework provides various strategies for addressing failures:
+Circuit breakers, Retry, Timeout, Rate Limiters, fallback handler, Bulkheads etc.
+
+Observability:
+Spring Boot Actuator is an integrated project providing:
+Health check, Log Insights, Metrix.
+
+Communication Style:
+Spring Boot has the capabilities to build reactive web applications, 
+Spring MVC to Build Rest APIs
+Easy integration with MQ to build asynchronous style services. 
+Spring also have module to build SOAP based application.
+
+Middle-tier Integration:
+Apache Kafka, any AMQP, RabbitMQ, ActiveMQ
+
+Integration with Tools:
+Consul, Prometheus, Jaeger, Grafana
+
+Cloud Native Support:
+Docker, Kubernetes, OpenTracing, Etcd, DevOps
+
+Security:
+Spring Security, OAuth2, Session management, Stateful and stateless services. key vault, Gateway patterns
+
+Distributed config management:
+Spring Cloud Config
+
+Service Discovery:
+Client Side, Server Side
+
+Performance:
+Catching support, Load Balancing, Clustering with Spring Cloud Cluster
+
+Communication Data Format:
+JSON, XML
+
+Testing:
+Spring Testing module, Mocking, Profiling
+
+
+
+Creating Spring Projects:
+Ultimate goal is to build out an Archetype for Maven for TTRC
+Use Spring Boot starter.io
+
+
+Details for the Project:
+
+
+How to create Services and bring into the Project:
+Steps Overview:
+1. Create new Repo on Git 
+2. Clone Repo in local environment 
+3. Generate Spring Boot Project 
+4. Copy Spring Files into the Repo
+5. Open Repo in IntelliJ Module
+6. Configure Repo 
+7. Build Repo
+
+
+Steps Detailed:
+1. Create new Repo on Git 
+	Git Hub Create new Repo 
+	Name Repo ended with Services
+	EX: Name-Services
+2. Clone Repo in local environment 
+	Go to project folder
+	Create new Repo by cloning existing repository
+3. Generate Spring Boot Project 
+	Go to Spring.Starter.io
+	Create Project with dependencies:
+		Maven, jar, Java, JDK 17
+		com.dgl, name-service, com.dgl.nameservice
+	Dependencies
+		Web, Dev Tools, MySql, JPA, lombok
+4. Copy Spring Files into the Repo
+	Add Spring boot files to the repo 
+5. Open Repo in IntelliJ Module
+	Open IntelliJ import repo into existing TTRC project 
+6. Configure Repo 
+	Update the Properties file with the connection information
+7. Build Repo 
+	Run Maven Build Project
+	
+
+TTRC Core Project File Structure:
+
+
+
+
+
+Documentation
+Endpoint 
+	Documentation
+	Naming Conventions
+	Example 
+		// @GetMapping
+		// public String getAllUsers(){ return "Sending back all users";}
+		// Build Get All Users REST API
+		// http://localhost:8080/api/v1/users
+	Example:
+		@Pathvariable
+			@Pathvariable (/pathvalue   @Pathvariable("PassedName") Value methodName
+			
+		@RequestParameter
+			@RequestParam /uril?id=1 @RequestParam Value passedName 
+			@RequestParam int id
+		@RequestBody
+			@RequestBody Object objectName 
+    
+	Endpoint Communication:
+	Synchronous
+
+	Asynchrounoous 
+	RabbitMQ (Docker Container)
+
+	Versioning 
+		api/v1/servicename
+		Collections api/v1/users/id/accounts
+		Singleton api/v1/users/id
+		
+		
+Data Access Approach:
+JPAs
+DTOs
+DAO 
+
+Mapping classes
+
+
+JPA 
+
+https://docs.spring.io/spring-data/data-jpa/docs/current/reference/html/#jpa.named-parameters
+
+Querydsl 
+
+plugin>
+  <groupId>com.mysema.maven</groupId>
+  <artifactId>maven-apt-plugin</artifactId>
+  <version>1.0</version>
+  <executions>
+    <execution>
+      <phase>generate-sources</phase>
+      <goals>
+        <goal>process</goal>
+      </goals>
+      <configuration>
+        <outputDirectory>target/generated-sources</outputDirectory>
+        <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+
+
+
+	JPA Query Methods:
+	Query methods
+When Spring Data JPA creates the Spring bean instance for the AccountRepository interface 
+it inspects all query methods defined in it and derives a query for each of them. 
+By default Spring Data JPA will automatically parses the method name and creates a query from it. 
+The query is implemented using the JPA criteria API. In this case the findByCustomer(…) 
+method is logically equivalent to the JPQL query select a from Account a where a.customer = ?1. 
+The parser that analyzes the method name supports quite a large set of keywords such as And, 
+Or, GreaterThan, LessThan, Like, IsNull, Not and so on. You can also add OrderBy clauses if you like. 
+For a detailed overview please check out the reference documentation. This mechanism gives us a query 
+method programming model like you're used to from Grails or Spring Roo.
+
+Now let's suppose you want to be explicit about the query to be used. To do so you can 
+either declare a JPA named query that follows a naming convention (in this case Account.findByCustomer) 
+in an annotation on the entity or in your orm.xml. Alternatively you can annotate your repository 
+method with @Query:
+
+Example:
+
+@Transactional(readOnly = true)
+public interface AccountRepository extends JpaRepository<Account, Long> {
+
+  @Query("<JPQ statement here>")
+  List<Account> findByCustomer(Customer customer); 
+}
+
+
+
+
+Technology:
+
+Version:
+
+Components:
+API Gateway
+Service Registry
+Configuration Server
+Configuration Server Repo
+
+Services:
+System:
+	API-Gateway
+	Service Registry
+	Config
+	RabbitMQ
+	Database
+	
+Admin: 
+	Users  3000	
+	Account 3001
+	AccountType 3002
+	
+Stocks:
+	Stocks, 3003
+	Watchlist 3004
+	WatchlistType 3005
+	Earnings 3006
+	
+Trades:
+Trades 4000
+TradeCommodity 4001
+TradeZones 4002
+TradeTypes 4003
+TradeTechniques 4004
+TrendAnalysis 4005
+
+TradeRules
+TradePlanning
+PreTrade
+TradeJournal
+PostTrade
+TradeSimulation
+TradeAction
+TradeAnalytics
+
+
+Charts:
+	Charts 5000
+	ChartPurpose 5001
+	ChartActions 5002
+	DailyChartsBasket 5003
+	ChartStatus 5004
+	ChartRelationship 5005
+	
+Misc
+	Category 6000
+	Events 6001
+	EventTypes 6002
+	LessonLearned 6003
+	Goals 6004
+	GoalsCategory 6005
+	GoalsInterval 6006
+	
+
+Database Tables Description:
+
+Section Charts:	
+Name: Charts
+Description: Displays chart positions notes for each position for the chart entry
+Examples:
+OOBT is Out of Bounds Top, This is a sell signal
+DBT Double Top, This is a buy signal 
+
+
+Name: Chartstatus 
+Description: Displays chart positions notes for each position for the chart entry
+Examples:
+OOBT is Out of Bounds Top, This is a sell signal
+DBT Double Top, This is a buy signal 
+
+
+Port 8000
+Table
+
+Sample URI 
+http://localhost:8000/api/chartpositions
+
+Endpoints:
+Testing:
+Postman 
+	Collection for Each Service
+	Requests for Each Action
+
+Documentation:
+
+Reference 
+https://restfulapi.net/resource-naming/
+
+Identify 
+
+
+Error Handling 
+
+Client Request Controller Services (Throws Exception) SpringBoot DEfault Error Handling Returns Response to Client
