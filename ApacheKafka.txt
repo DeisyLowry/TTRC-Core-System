@@ -1,0 +1,86 @@
+Apache Kafka IN TTRC Ecosystem
+
+
+
+Producers: 
+(Internal)
+(External)
+
+Kafka
+
+
+Consumers:
+(Internal) 
+(External)
+
+
+
+Event Streaming:
+
+Event Streaming:
+Capturing data Real-Time from event sources:
+- Databases
+- Sensors
+- Mobile devices
+- Cloud Services
+- Software Apps
+= Streamed Events
+Storing this data, ability to manipulate, process, and react to the event streams
+As well as, Routing Event Streams as needed
+ 
+Ensures continuous flow and interpretation of data
+
+Use Cases:
+
+1. Track/Monitor Stocks/Options
+2. Capture Data for Analysis
+3. Assist in building trade scenarios
+
+
+Kafka Platform:
+- Publish/Subscribe to Data
+- Store Data Streams
+- Process Data
+
+Concepts:
+
+Events An Action takes place it is recorded in Kafka Data Store 
+Event(Record/Message)
+
+Events Attributes:
+1. Key
+2. Value
+3. Timestamp
+4. Meta Data
+
+Events are organized under Topics:
+
+Topics:
+Subscribers
+Producers
+
+Kafka APIs
+
+Admin
+Producers
+Consumers
+Streams
+Connect
+
+Use Cases:
+Messaging
+Website Activity
+Log Aggregation
+Stream Processing
+Event Sourcing
+Commit Log
+(Focus on Stream Processing and Event Sourcing)
+
+
+Spring Kafka
+https://spring.io/projects/spring-kafka
+
+https://docs.spring.io/spring-kafka/docs/current/reference/html/
+
+
+
