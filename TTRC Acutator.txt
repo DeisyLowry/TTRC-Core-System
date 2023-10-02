@@ -1,0 +1,59 @@
+TTRC Actuator Spring Boot
+
+Actuator:
+
+Monitoring Metrics Health Checks for Endpoints
+
+HTTP endpoints through JMX
+
+
+Steps 
+
+1. Add Actuator maven dependency
+2. Update Properties File
+
+Actuator Key Endpoints
+/info
+
+## info endpoints
+management.info.env.enabled=true
+info.app.name=Spring Boot records Trends
+info.app.description=Records Trends 
+info.app.version=1.0.0
+
+/health
+
+management.endpoint.health.show-details=always
+
+/beans
+http://localhost:9999/actuator/beans
+
+/conditions
+http://localhost:9999/actuator/conditions
+
+
+/mappings
+http://localhost:9999/actuator/mappings
+
+
+/configprops
+http://localhost:9999/actuator/configprops
+
+/metrics
+http://localhost:9999/actuator/metrics
+
+/env
+http://localhost:9999/actuator/env
+
+/threaddump
+http://localhost:9999/actuator/threaddump
+
+/loggers
+http://localhost:9999/actuator/loggers
+
+
+/shutdown
+management.endpoint.shutdown.enabled=true
+
+
+

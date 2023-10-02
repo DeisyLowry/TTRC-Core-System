@@ -1,0 +1,228 @@
+Model Mapper Class
+
+https://modelmapper.org/getting-started/
+
+Steps:
+
+1. Add ModelMapper Dependency to Maven	
+2. Configure ModelMapper Bean
+3. Inject and use ModelMapper Bean in Service Class
+
+
+Getting Started 
+
+1. Include Model Mapper Dependency for Maven
+
+Setting Up
+If you’re a Maven user just add the modelmapper library as a dependency:
+
+<dependency>
+  <groupId>org.modelmapper</groupId>
+  <artifactId>modelmapper</artifactId>
+  <version>3.0.0</version>
+</dependency>
+Otherwise you can download the latest ModelMapper jar and add it to your classpath.
+
+
+2. Source 
+
+Source model
+// Assume getters and setters on each class
+class Order {
+  Customer customer;
+  Address billingAddress;
+}
+
+class Customer {
+  Name name;
+}
+
+class Name {
+  String firstName;
+  String lastName;
+}
+
+class Address {
+  String street;
+  String city;
+}
+
+
+3. Destination
+
+
+Destination Model
+// Assume getters and setters
+class OrderDTO {
+  String customerFirstName;
+  String customerLastName;
+  String billingStreet;
+  String billingCity;
+}
+
+Also, can use this to do integration testing:
+
+We can use ModelMapper to implicitly map an order instance to a new OrderDTO:
+
+ModelMapper modelMapper = new ModelMapper();
+OrderDTO orderDTO = modelMapper.map(order, OrderDTO.class);
+And we can test that properties are mapped as expected:
+
+assertEquals(order.getCustomer().getName().getFirstName(), orderDTO.getCustomerFirstName());
+assertEquals(order.getCustomer().getName().getLastName(), orderDTO.getCustomerLastName());
+assertEquals(order.getBillingAddress().getStreet(), orderDTO.getBillingStreet());
+assertEquals(order.getBillingAddress().getCity(), orderDTO.getBillingCity());
+
+To Implementation Documentation:
+
+
+1. Add Maven Dependency:
+<dependency>
+  <groupId>org.modelmapper</groupId>
+  <artifactId>modelmapper</artifactId>
+  <version>3.0.0</version>
+</dependency>
+
+
+2. Configure Spring Bean
+	@Bean
+	public ModelMapper modelMapper(){
+		return new ModelMapper();
+	}
+	
+3. 
+
+
+
+
+MapStruc
+URL:
+www.mapstruc.org
+
+Apache Maven 
+
+<properties>
+    <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+</properties>
+...
+<dependencies>
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${org.mapstruct.version}</version>
+    </dependency>
+</dependencies>
+...
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+                <source>1.8</source> <!-- depending on your project -->
+                <target>1.8</target> <!-- depending on your project -->
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.mapstruct</groupId>
+                        <artifactId>mapstruct-processor</artifactId>
+                        <version>${org.mapstruct.version}</version>
+                    </path>
+                    <!-- other annotation processors -->
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>17</source> <!-- depending on your project -->
+					<target>17</target> <!-- depending on your project -->
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${org.mapstruct.version}</version>
+						</path>
+						<!-- other annotation processors -->
+					</annotationProcessorPaths>
+				</configuration>
+
+			</plugin>
+	<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+
+	<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+
+Include with Lombok
+https://github.com/mapstruct/mapstruct-examples/blob/main/mapstruct-lombok/pom.xml
+
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+        <org.projectlombok.version>1.18.20</org.projectlombok.version>
+        <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+    </properties>
+	
+	
+	<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <!-- See https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
+                        <!-- Classpath elements to supply as annotation processor path. If specified, the compiler   -->
+                        <!-- will detect annotation processors only in those classpath elements. If omitted, the     -->
+                        <!-- default classpath is used to detect annotation processors. The detection itself depends -->
+                        <!-- on the configuration of annotationProcessors.                                           -->
+                        <!--                                                                                         -->
+                        <!-- According to this documentation, the provided dependency processor is not considered!   -->
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${org.mapstruct.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${org.projectlombok.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok-mapstruct-binding</artifactId>
+                                <version>${lombok-mapstruct-binding.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+References:
+
+MapStruct
+
+https://mapstruct.org/
+
+
