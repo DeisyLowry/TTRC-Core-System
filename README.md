@@ -1,3 +1,7 @@
+Some of this documentation will find a home in submodules for different functionality 
+
+Eventually there will be a document to outline the functionality for the system
+
 # TTRC-Core-System
 TTRC Core Systems functionality 
 
