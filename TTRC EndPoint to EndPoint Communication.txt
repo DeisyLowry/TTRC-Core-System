@@ -1,0 +1,42 @@
+TTRC EndPoint to EndPoint Communication Overview:
+
+With a Relational Database codes are embedded within the 
+entities which are returned from the Database calls;
+
+There is a need to aggregate data in these calls and retrieve
+these codes from the database:
+
+This requirements means endpoints need to communicate in 
+Synchronous Mode:
+(Real Time)
+
+Asynchronous Mode:
+(Batch waiting for response)
+
+
+Modes of Communication:
+
+RestTemplate (Maintenance Mode not considered)
+
+Webclient 
+Steps:
+
+1. Add Webflux dependency
+2. Configure Webclient
+3. Inject and Use Webclient
+4. Test Postman
+
+
+1. Add Webflux
+	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+
+OpenFeign Client
+Steps:
+
+1. Add Webflux dependency
+2. Configure Webclient
+3. Inject and Use Webclient
+4. Test Postman
